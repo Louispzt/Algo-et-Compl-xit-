@@ -23,6 +23,8 @@ public class Node {
     public void addNeihboor(Node neighboor){
         if (neighboors.get(neighboor) != null){
             int n = neighboors.get(neighboor);
+            if (str.equals("américains"))
+                System.out.println(neighboor);
             if (n + 1 > maxval )
                 nodeMaxVal = neighboor;
             neighboors.replace(neighboor, n, n + 1);
