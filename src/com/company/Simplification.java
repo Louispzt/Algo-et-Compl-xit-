@@ -8,7 +8,6 @@ public class Simplification {
     public String simplifier(String str){
         str = str.toLowerCase();
         str = str.replaceAll("," , "");
-        str = str.replaceAll("\\." , "&");
         str = str.replaceAll(";" , "");
         str = str.replaceAll("/" , "");
         str = str.replaceAll(" - " , "");

@@ -18,7 +18,7 @@ public class StopWords {
         File file = new File("src/stop_words_"+ lang +".dat");
         //System.out.println(file.exists());
         BufferedReader br = new BufferedReader(new FileReader(file));
-        String line = br.readLine();
+        String line;
 
         while ((line = br.readLine()) != null) {
             stopWordsList.add(line);
