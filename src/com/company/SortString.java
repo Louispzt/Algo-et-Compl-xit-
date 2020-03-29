@@ -28,6 +28,7 @@ public class SortString {
     public void doNodeHashMap() {
         for (int i0 = 0; i0 < arrayList.size(); i0++){
             //String[] sentences = simplification.simplifier(arrayList.get(i0)).split("\\.");
+            arrayList.set(i0, arrayList.get(i0).toLowerCase());
             String[] sentences = arrayList.get(i0).replaceAll("[^a-zA-Z0-9\\. éèêôûï\\-\\']+","").split("\\.");
             System.out.println(Arrays.toString(sentences));
             for (int i = 0; i < sentences.length; i++) {
@@ -50,7 +51,7 @@ public class SortString {
                                     longerWord = words[k];
                                     tinierWord = words[j];
                                 }
-                                String word = "[" + longerWord + ", " + tinierWord + "]";
+                                String word = longerWord + ", " + tinierWord;
                                 if (neighboorsHashMap.containsKey(word)) {
                                     int value = neighboorsHashMap.get(word);
                                     neighboorsHashMap.replace(word, value, value + 1);
@@ -67,31 +68,33 @@ public class SortString {
         }
     }
 
-    public void printNeighboors(){
-        ArrayList<ArrayList<String>> arrayList = getNeighboors();
+    public void printNeighboors(int treshold){
+        ArrayList<ArrayList<String>> arrayList = getNeighboors(treshold);
         for (int i = 0; i < arrayList.size(); i++){
-            String strings = i + 1 + " : ";
-            for (int k = 0; k < arrayList.get(i).size(); k++){
-                strings += arrayList.get(i).get(k) + " ";
+            StringBuilder strings = new StringBuilder(i + 1 + " : ");
+            for (int j = 0; j < arrayList.get(i).size(); j++){
+                strings.append(arrayList.get(i).get(j)).append(" ");
             }
             System.out.println(strings);
         }
     }
 
-    public ArrayList<ArrayList<String>> getNeighboors() {
+    public ArrayList<ArrayList<String>> getNeighboors(int treshold) {
         ArrayList<ArrayList<String>> arrayList = new ArrayList<>();
         for (int i = 0; i < maxNeighboorVal; i++){
             arrayList.add(new ArrayList<>());
         }
         for (String str :
                 neighboorsHashMap.keySet()) {
-            arrayList.get(neighboorsHashMap.get(str) - 1).add(str);
+            String[] words = str.split(", ");
+            if (wordsHashMap.get(words[0]) > treshold && wordsHashMap.get(words[1]) > treshold)
+                arrayList.get(neighboorsHashMap.get(str) - 1).add(str);
         }
         return arrayList;
     }
 
-    public void printWords(){
-        ArrayList<ArrayList<String>> arrayList = getWords();
+    public void printWords(int treshold){
+        ArrayList<ArrayList<String>> arrayList = getWords(treshold);
         for (int i = 0; i < arrayList.size(); i++){
             String strings = i + 1 + " : ";
             for (int k = 0; k < arrayList.get(i).size(); k++){
@@ -101,14 +104,15 @@ public class SortString {
         }
     }
 
-    public ArrayList<ArrayList<String>> getWords() {
+    public ArrayList<ArrayList<String>> getWords(int treshold) {
         ArrayList<ArrayList<String>> arrayList = new ArrayList<>();
-        for (int i = 0; i < maxWordVal; i++){
+        for (int i = 0; i < maxWordVal - treshold; i++){
             arrayList.add(new ArrayList<>());
         }
         for (String str :
                 wordsHashMap.keySet()) {
-            arrayList.get(wordsHashMap.get(str) - 1).add(str);
+            if (wordsHashMap.get(str) >  treshold)
+                arrayList.get(wordsHashMap.get(str) - 1 - treshold).add(str);
         }
         return arrayList;
     }
