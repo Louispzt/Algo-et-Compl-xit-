@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89e504f7-23d1-4149-b65a-0ca844e2715e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/MouseDragTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/OvalString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Bouton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/BoutonEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Fenetre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/TextDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet_java/text.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet_java/text.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/JFileChooser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MouseDragTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MouseDragTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/SortString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SortString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/StopWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/StopWords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/TextFileToListOfString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/TextFileToListOfString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/text.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/text.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,50 +47,27 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last.edited.regexp" value="qzd7RAR , zzr" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/company" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Louis\Desktop\COURS\S2\Algo et compléxité\Projet_java\Algo et Compléxité\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Louis\Desktop\COURS\S2\Algo et compléxité\Projet_java\Algo et Compléxité\src\com\company" />
+      <recent name="C:\Users\Louis\Desktop\COURS\S2\Algo et compléxité\Projet_java\src" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.company" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Louis\Desktop\COURS\S2\Algo et compléxité\Projet_java\src" />
-    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="DrawText" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.DrawText" />
-      <module name="Projet_java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JFileChooser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.JFileChooser" />
-      <module name="Projet_java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="Projet_java" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -92,8 +77,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.DrawText" />
-        <item itemvalue="Application.JFileChooser" />
       </list>
     </recent_temporary>
   </component>
@@ -125,6 +108,10 @@
       <workItem from="1584443366215" duration="255000" />
       <workItem from="1584446271165" duration="97000" />
       <workItem from="1585493865761" duration="189000" />
+      <workItem from="1587070481410" duration="422000" />
+      <workItem from="1587070955992" duration="833000" />
+      <workItem from="1587075686944" duration="609000" />
+      <workItem from="1587077796266" duration="658000" />
     </task>
     <servers />
   </component>
@@ -135,6 +122,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587070981807">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587070981807" />
     <state x="716" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582702349074">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -143,26 +134,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584347742021" />
+    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587070979157">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587070979157" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584446359921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584446359921" />
-    <state width="1877" height="207" key="GridCell.Tab.0.bottom" timestamp="1584443622343">
+    <state width="1877" height="207" key="GridCell.Tab.0.bottom" timestamp="1587080944487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="207" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584443622343" />
-    <state width="1877" height="207" key="GridCell.Tab.0.center" timestamp="1584443622343">
+    <state width="1877" height="207" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587080944487" />
+    <state width="1877" height="207" key="GridCell.Tab.0.center" timestamp="1587080944487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="207" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584443622343" />
-    <state width="1877" height="207" key="GridCell.Tab.0.left" timestamp="1584443622343">
+    <state width="1877" height="207" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587080944487" />
+    <state width="1877" height="207" key="GridCell.Tab.0.left" timestamp="1587080944487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="207" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584443622343" />
-    <state width="1877" height="207" key="GridCell.Tab.0.right" timestamp="1584443622343">
+    <state width="1877" height="207" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587080944487" />
+    <state width="1877" height="207" key="GridCell.Tab.0.right" timestamp="1587080944487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="207" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584443622343" />
+    <state width="1877" height="207" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587080944487" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1582728627165">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -183,10 +178,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583913212042" />
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584446289977">
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587077816007">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584446289977" />
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587077816007" />
     <state x="690" y="286" key="extract.method.dialog" timestamp="1584384371379">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

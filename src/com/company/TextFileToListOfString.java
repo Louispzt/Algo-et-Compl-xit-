@@ -14,9 +14,8 @@ public class TextFileToListOfString {
         arrayLists = new ArrayList<>();
     }
 
-    public void Open(String URL) throws IOException{
+    public void open(String URL) throws IOException{
         File file = new File(URL);
-        //System.out.println(file.exists());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line;
         String str = "";
@@ -27,10 +26,20 @@ public class TextFileToListOfString {
             }
             str += line;
         }
-        if (str != ""){
+        if (!str.equals("")){
             arrayLists.add(str);
         }
         br.close();
+    }
+
+    public ArrayList<String> read(String text){
+        String str = "";
+        for (String sentences : text.split("\n")){
+            if (!sentences.isEmpty()){
+                arrayLists.add(sentences);
+            }
+        }
+        return arrayLists;
     }
 
     public ArrayList<String> getArrayLists() {

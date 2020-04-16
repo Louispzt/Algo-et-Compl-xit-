@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.Simplification;
+import com.company.StopWords;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,7 +33,6 @@ public class SortString {
             //String[] sentences = simplification.simplifier(arrayList.get(i0)).split("\\.");
             arrayList.set(i0, arrayList.get(i0).toLowerCase());
             String[] sentences = arrayList.get(i0).replaceAll("[^a-zA-Z0-9\\. éèêôûï\\-\\']+","").split("\\.");
-            System.out.println(Arrays.toString(sentences));
             for (int i = 0; i < sentences.length; i++) {
                 String[] words = sentences[i].split(" ");
                 for (int j = 0; j < words.length; j++) {
@@ -75,7 +77,6 @@ public class SortString {
             for (int j = 0; j < arrayList.get(i).size(); j++){
                 strings.append(arrayList.get(i).get(j)).append(" ");
             }
-            System.out.println(strings);
         }
     }
 
@@ -84,24 +85,16 @@ public class SortString {
         for (int i = 0; i < maxNeighboorVal; i++){
             arrayList.add(new ArrayList<>());
         }
-        for (String str :
-                neighboorsHashMap.keySet()) {
-            String[] words = str.split(", ");
-            if (wordsHashMap.get(words[0]) > treshold && wordsHashMap.get(words[1]) > treshold)
-                arrayList.get(neighboorsHashMap.get(str) - 1).add(str);
+        if (maxNeighboorVal > 0){
+
+            for (String str :
+                    neighboorsHashMap.keySet()) {
+                String[] words = str.split(", ");
+                if (wordsHashMap.get(words[0]) > treshold && wordsHashMap.get(words[1]) > treshold)
+                    arrayList.get(neighboorsHashMap.get(str) - 1).add(str);
+            }
         }
         return arrayList;
-    }
-
-    public void printWords(int treshold){
-        ArrayList<ArrayList<String>> arrayList = getWords(treshold);
-        for (int i = 0; i < arrayList.size(); i++){
-            String strings = i + 1 + " : ";
-            for (int k = 0; k < arrayList.get(i).size(); k++){
-                strings += arrayList.get(i).get(k) + " ";
-            }
-            System.out.println(strings);
-        }
     }
 
     public ArrayList<ArrayList<String>> getWords(int treshold) {

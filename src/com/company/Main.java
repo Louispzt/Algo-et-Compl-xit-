@@ -5,55 +5,55 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                JFrame f = new JFrame("Oui");
-                MouseDragTest mouseDragTest;
-                try {
-                    mouseDragTest = new MouseDragTest();
-                    f.add(mouseDragTest);
-                    f.addKeyListener(new KeyListener() {
+    static String file;
+    static TextFileToListOfString text;
+    static MouseDragTest mouseDragTest;
+    static Fenetre f;
 
-                        @Override
-                        public void keyTyped(KeyEvent e) {
-                        }
+    public static void main(String[] args) throws IOException {
+        reload();
+        f = new Fenetre(mouseDragTest);
+        f.setTitle("Projet Algo et Compléxité");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 
-                        @Override
-                        public void keyReleased(KeyEvent e) {
-                        }
-
-                        @Override
-                        public void keyPressed(KeyEvent e) {
-                            if (e.getKeyCode() == 107){
-                                mouseDragTest.addTreshold(1);
-                                f.repaint();
-                            }
-                            if (e.getKeyCode() == 109){
-                                mouseDragTest.addTreshold(-1);
-                                f.repaint();
-                            }
-                            if (e.getKeyCode() == 79) {
-                                mouseDragTest.polyType = (mouseDragTest.polyType + 1) % mouseDragTest.nbPoly;
-                                mouseDragTest.doThis();
-                                f.repaint();
-                            }
-                            System.out.println("Pressed " + e.getKeyCode());
-                        }
-                    });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                f.setPreferredSize(new Dimension(1200,800));
-                f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                f.pack();
-                f.setLocationRelativeTo(null);
-                f.setVisible(true);
-                //OvalString ovalString = new OvalString();
-            }
-        });
+    public static void reload() throws IOException {
+        if (text == null ){
+            text = new TextFileToListOfString();
+            text.open("src/text.dat");
+            mouseDragTest = new MouseDragTest(text.arrayLists);
+            return;
+        }
+        FileDialog dialog = new FileDialog((Frame)null, "Select File to Open");
+        dialog.setMode(FileDialog.LOAD);
+        dialog.setVisible(true);
+        file = dialog.getFile();
+        String directory = dialog.getDirectory();
+        if (file == null){
+            JInternalFrame frame = new JInternalFrame();
+            JOptionPane.showMessageDialog(frame,
+                    "File not found or not specified.\nUsing old one.",
+                    "Error file not found",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        try{
+            text = new TextFileToListOfString();
+            text.open(directory + file);
+        } catch (IOException e) {
+            text.open("src/text.dat");
+            JInternalFrame frame = new JInternalFrame();
+            JOptionPane.showMessageDialog(frame,
+                    "An error has occured.\nUsing default document.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        mouseDragTest = new MouseDragTest(text.arrayLists);
+        System.out.println(text.arrayLists.toString());
     }
 }
