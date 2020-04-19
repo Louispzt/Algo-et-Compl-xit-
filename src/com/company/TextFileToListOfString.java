@@ -18,16 +18,8 @@ public class TextFileToListOfString {
         File file = new File(URL);
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line;
-        String str = "";
         while ((line = br.readLine()) != null) {
-            if (!line.equals("") && !str.equals("")){
-                arrayLists.add(str);
-                str = "";
-            }
-            str += line;
-        }
-        if (!str.equals("")){
-            arrayLists.add(str);
+            arrayLists.add(line);
         }
         br.close();
     }

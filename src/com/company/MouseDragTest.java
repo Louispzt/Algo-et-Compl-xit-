@@ -2,6 +2,7 @@ package com.company;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,12 +20,12 @@ public class MouseDragTest extends JPanel {
     private Point translate;
     public static FontMetrics fm;
     static int treshold;
+    SortString sortString;
     private boolean tresholdChanged;
     boolean zoomChanged;
     float zoom;
     float oldZoom;
     Point offset;
-    SortString sortString;
 
     public MouseDragTest(ArrayList<String> arrayList) throws IOException {
         zoomChanged = false;
@@ -133,6 +134,11 @@ public class MouseDragTest extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        Graphics2D g2 = (Graphics2D) g;
+
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+
         if (tresholdChanged){
             doThis();
             zoom = 1;
@@ -140,7 +146,6 @@ public class MouseDragTest extends JPanel {
             tresholdChanged = false;
         }
 
-        Graphics2D g2 = (Graphics2D) g;
         g2.setColor(Color.white);
         for (int i = 0; i < linkList.size(); i++){
             for (String str : linkList.get(i)){
@@ -162,11 +167,6 @@ public class MouseDragTest extends JPanel {
             g.setColor(Color.red);
             g.drawString(oS.word, oS.wordX, oS.wordY);
         }
-    }
-
-    @Override
-    public Dimension getPreferredSize() {
-        return new Dimension(1200, 800);
     }
 
     public void doThis(){

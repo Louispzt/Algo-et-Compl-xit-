@@ -1,8 +1,5 @@
 package com.company;
 
-import com.company.Simplification;
-import com.company.StopWords;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,10 +12,8 @@ public class SortString {
     ArrayList<String> arrayList;
     int maxNeighboorVal;
     int maxWordVal;
-    Simplification simplification;
 
     public SortString(ArrayList<String> arrayList) throws IOException {
-        simplification = new Simplification();
         this.arrayList = arrayList;
         neighboorsHashMap = new HashMap<>();
         wordsHashMap = new HashMap<>();
@@ -99,7 +94,7 @@ public class SortString {
 
     public ArrayList<ArrayList<String>> getWords(int treshold) {
         ArrayList<ArrayList<String>> arrayList = new ArrayList<>();
-        for (int i = 0; i < maxWordVal - treshold; i++){
+        for (int i = 0; i < Math.max(1, maxWordVal - treshold); i++){
             arrayList.add(new ArrayList<>());
         }
         for (String str :
